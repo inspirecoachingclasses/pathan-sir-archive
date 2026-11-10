@@ -1,0 +1,38 @@
+---
+// src/pages/index.astro
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TimelineCard from '../components/TimelineCard.astro';
+
+const allPosts = await getCollection('posts');
+
+const sortedPosts = allPosts.sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+
+const rawCategories = Array.from(new Set(allPosts.map((p) => p.data.category)));
+const categories = ['All', ...rawCategories];
+
+const siteUrl = Astro.site?.toString() || 'https://inspire-archive.pages.dev';
+---
+
+<BaseLayout 
+  title="Pathan Sir's Archive | इन्स्पायर कोचिंग क्लासेस, धर्माबाद"
+  description="जगातील सर्वोत्तम विचार, प्रेरणादायी कोट्स, पॉडकास्ट आणि व्हिडीओ — संकलन: पठाण सर (इन्स्पायर, धर्माबाद)."
+  categories={categories}
+  currentCategory="All"
+>
+  <div class="container">
+    <div id="journalFeed">
+      {sortedPosts.length > 0 ? (
+        sortedPosts.map((post) => (
+          <TimelineCard post={post} siteUrl={siteUrl} />
+        ))
+      ) : (
+        <div style="background: white; padding: 2.5rem; border-radius: 6px; text-align: center; border: 1px solid #e8e3da;">
+          <p style="color: #847e75;">सध्या कोणतेही विचार उपलब्ध नाहीत. लवकरच नवीन लेख प्रसिद्ध केला जाईल.</p>
+        </div>
+      )}
+    </div>
+  </div>
+</BaseLayout>

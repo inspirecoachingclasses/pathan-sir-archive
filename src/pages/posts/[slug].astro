@@ -1,0 +1,142 @@
+---
+// src/pages/posts/[slug].astro
+import { getCollection, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+interface Props {
+  post: CollectionEntry<'posts'>;
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+const formattedDate = new Intl.DateTimeFormat('en-GB', {
+  day: '2-digit',
+  month: 'short',
+  year: 'numeric'
+}).format(post.data.date).toUpperCase();
+
+const siteUrl = Astro.site?.toString() || 'https://inspire-archive.pages.dev';
+const fullPostUrl = `${siteUrl.replace(/\/$/, '')}/posts/${post.slug}/`;
+
+const shareText = encodeURIComponent(
+  `*${post.data.title}*\n\n` +
+  `${post.data.description || ''}\n\n` +
+  `पठाण सरांचा विचार-कोष (Pathan Sir's Archive):\n` +
+  `${fullPostUrl}`
+);
+const whatsappShareUrl = `https://api.whatsapp.com/send?text=${shareText}`;
+---
+
+<BaseLayout
+  title={`${post.data.title} | Pathan Sir's Archive`}
+  description={post.data.description || `${post.data.title} - पठाण सर`}
+  isArticle={true}
+  publishedTime={post.data.date.toISOString()}
+>
+  <div class="container">
+    <div style="margin-bottom: 2rem;">
+      <a href="/" style="display: inline-flex; align-items: center; gap: 0.4rem; font-weight: 600; font-size: 0.88rem; color: var(--accent-navy); text-decoration: none;">
+        ← मुख्य पानावर परत जा (Back to Archive)
+      </a>
+    </div>
+
+    <article class="entry-card" style="padding: 2.75rem 2.5rem;">
+      <div class="entry-meta-top">
+        <span class="type-badge type-quote">{post.data.category}</span>
+        <time class="entry-date" datetime={post.data.date.toISOString()}>{formattedDate}</time>
+      </div>
+
+      <!-- Quote Format -->
+      {post.data.category === 'Quote' && (
+        <div>
+          <div class="big-quote-display">
+            "{post.data.quoteText || post.data.title}"
+          </div>
+          {post.data.source && (
+            <span class="quote-source">— {post.data.source}</span>
+          )}
+        </div>
+      )}
+
+      <!-- Non-Quote Format Headline -->
+      {post.data.category !== 'Quote' && (
+        <h1 class="entry-headline" style="font-size: 2.1rem; margin-bottom: 1.25rem;">
+          {post.data.title}
+        </h1>
+      )}
+
+      <!-- Video Format -->
+      {post.data.category === 'Video' && post.data.videoUrl && (
+        <div class="video-wrapper">
+          <iframe 
+            src={post.data.videoUrl} 
+            title={post.data.title}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+        </div>
+      )}
+
+      <!-- Visual Format -->
+      {post.data.category === 'Visual' && post.data.imageUrl && (
+        <div class="visual-image-wrapper">
+          <img src={post.data.imageUrl} alt={post.data.title} loading="lazy" />
+          {post.data.imageCaption && (
+            <div class="visual-caption">{post.data.imageCaption}</div>
+          )}
+        </div>
+      )}
+
+      <!-- Podcast Format -->
+      {post.data.category === 'Podcast' && (
+        <div class="podcast-card-box">
+          <div class="podcast-icon-bubble">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+              <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+              <line x1="12" y1="19" x2="12" y2="23"></line>
+              <line x1="8" y1="23" x2="16" y2="23"></line>
+            </svg>
+          </div>
+          <div class="podcast-info-meta">
+            {post.data.podcastSeries && (
+              <span class="podcast-series-title">{post.data.podcastSeries}</span>
+            )}
+            {post.data.podcastEpisode && (
+              <div class="podcast-ep-name">{post.data.podcastEpisode}</div>
+            )}
+            {post.data.source && (
+              <p class="podcast-takeaway">स्त्रोत: {post.data.source}</p>
+            )}
+          </div>
+        </div>
+      )}
+
+      <div class="reflection-prose" style="margin-top: 1.5rem;">
+        <Content />
+      </div>
+
+      <div class="entry-footer-actions" style="margin-top: 2.5rem; padding-top: 1.25rem;">
+        <span class="curator-tag">✍️ {post.data.author}</span>
+        <a 
+          href={whatsappShareUrl} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="share-whatsapp-link"
+          style="font-size: 0.88rem;"
+        >
+          WhatsApp वर पाठवा →
+        </a>
+      </div>
+    </article>
+  </div>
+</BaseLayout>

@@ -1,0 +1,522 @@
+/* ==========================================================================
+   PATHAN SIR'S ARCHIVE - TIMELESS 10-YEAR EDITORIAL PAPER DESIGN
+   Font: Poppins (Clean Devanagari & Latin) + Newsreader (Classical quotes)
+   Theme: Warm Alabaster (#faf8f5), Crisp White Cards (#ffffff), Rich Charcoal Ink
+   Strictly No Dark Mode, No Glassmorphism, No Clunky Disclaimer Boxes
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+
+:root {
+  --font-main: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Warm Alabaster Palette */
+  --bg-page: #faf8f5;            /* Natural warm paper */
+  --bg-card: #ffffff;            /* Crisp pure white */
+  --bg-subtle: #f3efe8;          /* Light parchment tint */
+  --border-fine: #e8e3da;        /* Hairline border */
+  --border-accent: #d8d0c2;      /* Structural hairline */
+
+  /* Inks */
+  --ink-primary: #181716;        /* Deep charcoal */
+  --ink-secondary: #4a4640;      /* Body reading charcoal */
+  --ink-muted: #7c766e;          /* Subtle dates & metadata */
+
+  /* Inspire Blue Accent */
+  --accent-blue: #1e3a8a;
+  --accent-blue-tint: #eff6ff;
+  --accent-blue-border: #bfdbfe;
+
+  /* Dimensions */
+  --max-width: 680px;            /* Optimal mobile-first reading width */
+  --radius: 8px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-page);
+  color: var(--ink-primary);
+  font-family: var(--font-main);
+  font-size: 15px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* Masthead Header */
+.site-masthead {
+  padding: 3.5rem 0 2rem;
+  border-bottom: 1px solid var(--border-fine);
+  background: var(--bg-page);
+  text-align: center;
+}
+
+/* Institute Top Branding */
+.institute-banner {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 1.5rem;
+}
+
+.institute-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #ffffff;
+  border: 1px solid var(--border-accent);
+  padding: 0.4rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--accent-blue);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  letter-spacing: -0.01em;
+}
+
+.institute-pill svg {
+  color: var(--accent-blue);
+  flex-shrink: 0;
+}
+
+.institute-subline {
+  font-size: 0.76rem;
+  color: var(--ink-muted);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Main Archive Brand */
+.masthead-title {
+  font-family: var(--font-serif);
+  font-size: 2.85rem;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--ink-primary);
+  margin-bottom: 0.5rem;
+}
+
+.masthead-subtitle {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--ink-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.masthead-subtitle strong {
+  color: var(--ink-primary);
+  font-weight: 600;
+}
+
+.masthead-tagline {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--ink-muted);
+  margin-top: 0.75rem;
+  max-width: 530px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.55;
+}
+
+/* Filter Bar */
+.filter-sticky-strip {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(250, 248, 245, 0.96);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border-fine);
+  padding: 0.65rem 0;
+}
+
+.filter-sticky-strip .container {
+  padding: 0;
+}
+
+.filter-pill-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 0.25rem 1.25rem;
+  justify-content: flex-start;
+}
+.filter-pill-row::-webkit-scrollbar { display: none; }
+
+@media (min-width: 600px) {
+  .filter-pill-row {
+    justify-content: center;
+    padding: 0.25rem 0;
+  }
+}
+
+.pill-btn {
+  flex-shrink: 0;
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--ink-secondary);
+  font-family: var(--font-main);
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 0.4rem 0.95rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.18s ease;
+}
+
+.pill-btn:hover {
+  color: var(--ink-primary);
+  background: var(--bg-subtle);
+}
+
+.pill-btn.active {
+  background: var(--ink-primary);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Journal Stream */
+.journal-stream {
+  padding: 2.75rem 0 5rem;
+  flex: 1;
+}
+
+.stream-entry {
+  margin-bottom: 3.5rem;
+  transition: opacity 0.2s ease;
+}
+
+.stream-entry.is-hidden {
+  display: none;
+}
+
+/* Content Cards */
+.entry-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-fine);
+  border-radius: var(--radius);
+  padding: 2rem 2rem 1.6rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+.entry-meta-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.35rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-fine);
+}
+
+.type-badge {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.22rem 0.65rem;
+  border-radius: 4px;
+}
+
+.type-quote {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.type-video {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.type-podcast {
+  background: #f3e8ff;
+  color: #6b21a8;
+}
+
+.type-visual {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+.entry-date {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--ink-muted);
+}
+
+/* Display Quote */
+.big-quote-display {
+  font-family: var(--font-serif);
+  font-size: 1.85rem;
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--ink-primary);
+  margin-bottom: 1rem;
+  letter-spacing: -0.015em;
+}
+
+.quote-source {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink-muted);
+  margin-bottom: 1.4rem;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Entry Headline for articles, video, audio */
+.entry-headline {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--ink-primary);
+  margin-bottom: 1rem;
+  letter-spacing: -0.015em;
+}
+
+/* Pathan Sir Reflection Prose */
+.reflection-prose {
+  font-size: 1rem;
+  color: var(--ink-secondary);
+  line-height: 1.8;
+  border-top: 1px dashed var(--border-fine);
+  padding-top: 1.25rem;
+}
+
+.reflection-prose p {
+  margin-bottom: 1.15rem;
+}
+
+.reflection-prose p:last-child {
+  margin-bottom: 0;
+}
+
+.reflection-prose strong {
+  color: var(--ink-primary);
+  font-weight: 600;
+}
+
+/* Responsive 16:9 Video Embed */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin: 1.25rem 0 1.5rem;
+  background: #000000;
+  border: 1px solid var(--border-fine);
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Podcast / Audio Card */
+.podcast-card-box {
+  background: var(--bg-page);
+  border: 1px solid var(--border-fine);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.35rem;
+  margin: 1.25rem 0 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.podcast-icon-bubble {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #f3e8ff;
+  color: #6b21a8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.podcast-info-meta {
+  flex: 1;
+}
+
+.podcast-series-title {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.podcast-ep-name {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--ink-primary);
+  margin: 0.2rem 0 0.35rem;
+}
+
+.podcast-takeaway {
+  font-size: 0.88rem;
+  color: var(--ink-secondary);
+  line-height: 1.6;
+}
+
+/* Visual Essay Display */
+.visual-image-wrapper {
+  margin: 1.25rem 0 1.5rem;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border-fine);
+  background: #f5f5f4;
+}
+
+.visual-image-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.visual-caption {
+  font-size: 0.82rem;
+  font-style: italic;
+  color: var(--ink-muted);
+  padding: 0.65rem 0.95rem;
+  border-top: 1px solid var(--border-fine);
+  background: #fafaf9;
+}
+
+/* Card Footer Action Bar */
+.entry-footer-actions {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-fine);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-size: 0.82rem;
+}
+
+.curator-tag {
+  color: var(--ink-muted);
+  font-weight: 500;
+}
+
+.share-whatsapp-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #15803d;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.share-whatsapp-link:hover {
+  color: #166534;
+  text-decoration: underline;
+}
+
+/* Quiet, Dignified Footer — Zero Disclaimer Box */
+.curator-footer {
+  border-top: 1px solid var(--border-fine);
+  background: var(--bg-card);
+  padding: 3.5rem 0 2.5rem;
+  text-align: center;
+  margin-top: auto;
+}
+
+.footer-quote-signoff {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-style: italic;
+  color: var(--ink-primary);
+  margin-bottom: 0.6rem;
+}
+
+.footer-curator-name {
+  font-size: 0.95rem;
+  color: var(--ink-secondary);
+  margin-bottom: 0.35rem;
+  font-weight: 500;
+}
+
+.footer-location-line {
+  font-size: 0.84rem;
+  color: var(--ink-muted);
+  margin-bottom: 1.5rem;
+}
+
+.footer-whatsapp-touch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--ink-primary);
+  text-decoration: none;
+  padding: 0.5rem 1.15rem;
+  border: 1px solid var(--border-accent);
+  border-radius: var(--radius);
+  background: var(--bg-page);
+  transition: all 0.18s ease;
+}
+
+.footer-whatsapp-touch:hover {
+  border-color: #15803d;
+  color: #15803d;
+  background: #ffffff;
+}
+
+.copyright-quiet {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-fine);
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+}
+
+/* Mobile Refinements */
+@media (max-width: 640px) {
+  .site-masthead { padding: 2.5rem 0 1.5rem; }
+  .masthead-title { font-size: 2.15rem; }
+  .entry-card { padding: 1.5rem 1.25rem 1.25rem; }
+  .big-quote-display { font-size: 1.45rem; }
+  .entry-headline { font-size: 1.3rem; }
+  .institute-pill { font-size: 0.82rem; }
+}

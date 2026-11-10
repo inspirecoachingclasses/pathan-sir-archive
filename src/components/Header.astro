@@ -1,0 +1,60 @@
+---
+interface Props {
+  currentCategory?: string;
+  categories?: string[];
+}
+
+const { currentCategory = 'All', categories = ['All', 'Quote', 'Video', 'Podcast', 'Visual'] } = Astro.props;
+
+const categoryLabels: Record<string, string> = {
+  All: 'सर्व (All)',
+  Quote: 'सुविचार (Quotes)',
+  Video: 'व्हिडिओ (Videos)',
+  Podcast: 'पॉडकास्ट (Podcasts)',
+  Visual: 'दृष्टीक्षेप (Visuals)',
+  Philosophy: 'तत्त्वज्ञान (Philosophy)'
+};
+---
+
+<header class="site-masthead">
+  <div class="container">
+    <!-- Prominent Institute Brand -->
+    <div class="institute-banner">
+      <div class="institute-pill">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+          <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+        </svg>
+        इन्स्पायर कोचिंग क्लासेस, धर्माबाद
+      </div>
+      <span class="institute-subline">Inspire Physics Classes • NEET | MHT-CET | Class 9-12</span>
+    </div>
+
+    <!-- Main Title -->
+    <h1 class="masthead-title">
+      <a href="/" style="color: inherit; text-decoration: none;">Pathan Sir’s Archive</a>
+    </h1>
+    <div class="masthead-subtitle">
+      संकलन आणि विचार: <strong>पठाण सर (Pathan Sir)</strong>
+    </div>
+    <p class="masthead-tagline">
+      "जीवनाला दिशा देणारे जगातील मौल्यवान विचार, प्रेरणादायी कोट्स, विचार करायला लावणारे पॉडकास्ट आणि संस्मरणीय संवाद."
+    </p>
+  </div>
+</header>
+
+<nav class="filter-sticky-strip">
+  <div class="container">
+    <div class="filter-pill-row" id="filterBar">
+      {categories.map((cat) => (
+        <button 
+          type="button" 
+          class={`pill-btn ${cat === currentCategory ? 'active' : ''}`}
+          data-category={cat}
+        >
+          {categoryLabels[cat] || cat}
+        </button>
+      ))}
+    </div>
+  </div>
+</nav>

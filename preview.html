@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Pathan Sir's Archive | इन्स्पायर कोचिंग क्लासेस, धर्माबाद</title>
+  
+  <!-- WhatsApp & Social Link Open Graph Preview Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Pathan Sir's Archive | इन्स्पायर कोचिंग क्लासेस" />
+  <meta property="og:description" content="जगातील सर्वोत्तम विचार, प्रेरणादायी कोट्स, पॉडकास्ट आणि व्हिडीओ — संकलन: पठाण सर (इन्स्पायर, धर्माबाद)." />
+  <meta property="og:site_name" content="Pathan Sir's Archive" />
+  <meta name="theme-color" content="#faf8f5" />
+
+  <!-- Google Fonts: Poppins (Clean Latin & Devanagari) + Newsreader (Literary Quotes) + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       PATHAN SIR'S ARCHIVE - TIMELESS 10-YEAR EDITORIAL PAPER DESIGN
+       Font: Poppins (Neat Devanagari/Marathi & Latin) + Newsreader (Classical quotes)
+       Color Theme: Warm Alabaster, Pure White Cards, Rich Charcoal Ink
+       Strictly No Dark Mode, No Glassmorphism, No Clunky Disclaimer Boxes
+       ========================================================================== */
+
+    :root {
+      --font-main: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-serif: 'Newsreader', Georgia, 'Times New Roman', serif;
+      --font-mono: 'JetBrains Mono', monospace;
+
+      /* Warm Alabaster Palette */
+      --bg-page: #faf8f5;            /* Natural warm paper */
+      --bg-card: #ffffff;            /* Crisp pure white */
+      --bg-subtle: #f3efe8;          /* Light parchment tint */
+      --border-fine: #e8e3da;        /* Hairline border */
+      --border-accent: #d8d0c2;      /* Structural hairline */
+
+      /* Inks */
+      --ink-primary: #181716;        /* Deep charcoal */
+      --ink-secondary: #4a4640;      /* Body reading charcoal */
+      --ink-muted: #7c766e;          /* Subtle dates & metadata */
+
+      /* Inspire Blue Accent */
+      --accent-blue: #1e3a8a;
+      --accent-blue-tint: #eff6ff;
+      --accent-blue-border: #bfdbfe;
+
+      /* Dimensions */
+      --max-width: 680px;            /* Optimal mobile-first reading width */
+      --radius: 8px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-page);
+      color: var(--ink-primary);
+      font-family: var(--font-main);
+      font-size: 15px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* Masthead Header */
+    .site-masthead {
+      padding: 3.5rem 0 2rem;
+      border-bottom: 1px solid var(--border-fine);
+      background: var(--bg-page);
+      text-align: center;
+    }
+
+    /* Institute Top Branding */
+    .institute-banner {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.35rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .institute-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #ffffff;
+      border: 1px solid var(--border-accent);
+      padding: 0.4rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--accent-blue);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+      letter-spacing: -0.01em;
+    }
+
+    .institute-pill svg {
+      color: var(--accent-blue);
+      flex-shrink: 0;
+    }
+
+    .institute-subline {
+      font-size: 0.76rem;
+      color: var(--ink-muted);
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    /* Main Archive Brand */
+    .masthead-title {
+      font-family: var(--font-serif);
+      font-size: 2.85rem;
+      font-weight: 500;
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      color: var(--ink-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .masthead-subtitle {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--ink-secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    .masthead-subtitle strong {
+      color: var(--ink-primary);
+      font-weight: 600;
+    }
+
+    .masthead-tagline {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--ink-muted);
+      margin-top: 0.75rem;
+      max-width: 530px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.55;
+    }
+
+    /* Filter Bar */
+    .filter-sticky-strip {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(250, 248, 245, 0.96);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border-fine);
+      padding: 0.65rem 0;
+    }
+
+    .filter-sticky-strip .container {
+      padding: 0;
+    }
+
+    .filter-pill-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding: 0.25rem 1.25rem;
+      justify-content: flex-start;
+    }
+    .filter-pill-row::-webkit-scrollbar { display: none; }
+
+    @media (min-width: 600px) {
+      .filter-pill-row {
+        justify-content: center;
+        padding: 0.25rem 0;
+      }
+    }
+
+    .pill-btn {
+      flex-shrink: 0;
+      background: transparent;
+      border: 1px solid transparent;
+      color: var(--ink-secondary);
+      font-family: var(--font-main);
+      font-size: 0.82rem;
+      font-weight: 500;
+      padding: 0.4rem 0.95rem;
+      border-radius: 9999px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.18s ease;
+    }
+
+    .pill-btn:hover {
+      color: var(--ink-primary);
+      background: var(--bg-subtle);
+    }
+
+    .pill-btn.active {
+      background: var(--ink-primary);
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    /* Journal Stream */
+    .journal-stream {
+      padding: 2.75rem 0 5rem;
+    }
+
+    .stream-entry {
+      margin-bottom: 3.5rem;
+      transition: opacity 0.2s ease;
+    }
+
+    .stream-entry.is-hidden {
+      display: none;
+    }
+
+    /* Content Cards */
+    .entry-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-fine);
+      border-radius: var(--radius);
+      padding: 2rem 2rem 1.6rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+    }
+
+    .entry-meta-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.35rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border-fine);
+    }
+
+    .type-badge {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.22rem 0.65rem;
+      border-radius: 4px;
+    }
+
+    .type-quote {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .type-video {
+      background: #fee2e2;
+      color: #991b1b;
+    }
+
+    .type-podcast {
+      background: #f3e8ff;
+      color: #6b21a8;
+    }
+
+    .type-visual {
+      background: #e0f2fe;
+      color: #0369a1;
+    }
+
+    .entry-date {
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      color: var(--ink-muted);
+    }
+
+    /* Display Quote */
+    .big-quote-display {
+      font-family: var(--font-serif);
+      font-size: 1.85rem;
+      font-weight: 500;
+      line-height: 1.35;
+      color: var(--ink-primary);
+      margin-bottom: 1rem;
+      letter-spacing: -0.015em;
+    }
+
+    .quote-source {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--ink-muted);
+      margin-bottom: 1.4rem;
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    /* Entry Headline for articles, video, audio */
+    .entry-headline {
+      font-size: 1.5rem;
+      font-weight: 600;
+      line-height: 1.35;
+      color: var(--ink-primary);
+      margin-bottom: 1rem;
+      letter-spacing: -0.015em;
+    }
+
+    /* Pathan Sir Reflection Prose */
+    .reflection-prose {
+      font-size: 1rem;
+      color: var(--ink-secondary);
+      line-height: 1.8;
+      border-top: 1px dashed var(--border-fine);
+      padding-top: 1.25rem;
+    }
+
+    .reflection-prose p {
+      margin-bottom: 1.15rem;
+    }
+
+    .reflection-prose p:last-child {
+      margin-bottom: 0;
+    }
+
+    .reflection-prose strong {
+      color: var(--ink-primary);
+      font-weight: 600;
+    }
+
+    /* Responsive 16:9 Video Embed */
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin: 1.25rem 0 1.5rem;
+      background: #000000;
+      border: 1px solid var(--border-fine);
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* Podcast / Audio Card */
+    .podcast-card-box {
+      background: var(--bg-page);
+      border: 1px solid var(--border-fine);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.35rem;
+      margin: 1.25rem 0 1.5rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .podcast-icon-bubble {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #f3e8ff;
+      color: #6b21a8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .podcast-info-meta {
+      flex: 1;
+    }
+
+    .podcast-series-title {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--ink-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .podcast-ep-name {
+      font-size: 0.98rem;
+      font-weight: 600;
+      color: var(--ink-primary);
+      margin: 0.2rem 0 0.35rem;
+    }
+
+    .podcast-takeaway {
+      font-size: 0.88rem;
+      color: var(--ink-secondary);
+      line-height: 1.6;
+    }
+
+    /* Visual Essay Display */
+    .visual-image-wrapper {
+      margin: 1.25rem 0 1.5rem;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border-fine);
+      background: #f5f5f4;
+    }
+
+    .visual-image-wrapper img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .visual-caption {
+      font-size: 0.82rem;
+      font-style: italic;
+      color: var(--ink-muted);
+      padding: 0.65rem 0.95rem;
+      border-top: 1px solid var(--border-fine);
+      background: #fafaf9;
+    }
+
+    /* Card Footer Action Bar */
+    .entry-footer-actions {
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-fine);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      font-size: 0.82rem;
+    }
+
+    .curator-tag {
+      color: var(--ink-muted);
+      font-weight: 500;
+    }
+
+    .share-whatsapp-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: #15803d;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+
+    .share-whatsapp-link:hover {
+      color: #166534;
+      text-decoration: underline;
+    }
+
+    /* Quiet, Dignified Footer — Zero Disclaimer Box */
+    .curator-footer {
+      border-top: 1px solid var(--border-fine);
+      background: var(--bg-card);
+      padding: 3.5rem 0 2.5rem;
+      text-align: center;
+    }
+
+    .footer-quote-signoff {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      font-style: italic;
+      color: var(--ink-primary);
+      margin-bottom: 0.6rem;
+    }
+
+    .footer-curator-name {
+      font-size: 0.95rem;
+      color: var(--ink-secondary);
+      margin-bottom: 0.35rem;
+      font-weight: 500;
+    }
+
+    .footer-location-line {
+      font-size: 0.84rem;
+      color: var(--ink-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-whatsapp-touch {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--ink-primary);
+      text-decoration: none;
+      padding: 0.5rem 1.15rem;
+      border: 1px solid var(--border-accent);
+      border-radius: var(--radius);
+      background: var(--bg-page);
+      transition: all 0.18s ease;
+    }
+
+    .footer-whatsapp-touch:hover {
+      border-color: #15803d;
+      color: #15803d;
+      background: #ffffff;
+    }
+
+    .copyright-quiet {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-fine);
+      font-size: 0.75rem;
+      color: var(--ink-muted);
+    }
+
+    /* Mobile Refinements */
+    @media (max-width: 640px) {
+      .site-masthead { padding: 2.5rem 0 1.5rem; }
+      .masthead-title { font-size: 2.15rem; }
+      .entry-card { padding: 1.5rem 1.25rem 1.25rem; }
+      .big-quote-display { font-size: 1.45rem; }
+      .entry-headline { font-size: 1.3rem; }
+      .institute-pill { font-size: 0.82rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Masthead Header -->
+  <header class="site-masthead">
+    <div class="container">
+      
+      <!-- Prominent Institute Brand -->
+      <div class="institute-banner">
+        <div class="institute-pill">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+            <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+          </svg>
+          इन्स्पायर कोचिंग क्लासेस, धर्माबाद
+        </div>
+        <span class="institute-subline">Inspire Physics Classes • NEET | MHT-CET | Class 9-12</span>
+      </div>
+
+      <!-- Main Title -->
+      <h1 class="masthead-title">Pathan Sir’s Archive</h1>
+      <div class="masthead-subtitle">
+        संकलन आणि विचार: <strong>पठाण सर (Pathan Sir)</strong>
+      </div>
+      <p class="masthead-tagline">
+        "जीवनाला दिशा देणारे जगातील मौल्यवान विचार, प्रेरणादायी कोट्स, विचार करायला लावणारे पॉडकास्ट आणि संस्मरणीय संवाद."
+      </p>
+    </div>
+  </header>
+
+  <!-- Filter Navigation Bar -->
+  <nav class="filter-sticky-strip">
+    <div class="container">
+      <div class="filter-pill-row" id="filterBar">
+        <button type="button" class="pill-btn active" data-category="All">सर्व (All)</button>
+        <button type="button" class="pill-btn" data-category="Quote">सुविचार (Quotes)</button>
+        <button type="button" class="pill-btn" data-category="Video">व्हिडिओ (Videos)</button>
+        <button type="button" class="pill-btn" data-category="Podcast">पॉडकास्ट (Podcasts)</button>
+        <button type="button" class="pill-btn" data-category="Visual">दृष्टीक्षेप (Visuals)</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Journal Stream Feed -->
+  <main class="journal-stream">
+    <div class="container">
+
+      <!-- ITEM 1: QUOTE -->
+      <article class="stream-entry" data-category="Quote">
+        <div class="entry-card">
+          <div class="entry-meta-top">
+            <span class="type-badge type-quote">विचार / Quote</span>
+            <span class="entry-date">10 NOV 2026</span>
+          </div>
+
+          <div class="big-quote-display">
+            "You have power over your mind — not outside events. Realize this, and you will find strength."
+          </div>
+          <span class="quote-source">— Marcus Aurelius (मार्क्स ऑरेलियस, Meditations)</span>
+
+          <div class="reflection-prose">
+            <p>
+              आयुष्यात किंवा स्पर्धा परीक्षेत ९०% ताण हा 'बाहेर काय घडत आहे' याने येत नाही, तर 'आपण त्याकडे कसे पाहतो' याने येतो.
+            </p>
+            <p>
+              कठीण पेपर, लोकांची मते किंवा भूतकाळातील चुका आपल्या नियंत्रणात नसतात. आपल्या हातात असते फक्त चालू क्षणाचा अभ्यास, संयम आणि स्वतःचे मन. स्वतःच्या विचारांवर ज्याचे नियंत्रण आहे, त्याला जगातील कोणतीही परीक्षा घाबरवू शकत नाही.
+            </p>
+          </div>
+
+          <div class="entry-footer-actions">
+            <span class="curator-tag">✍️ पठाण सर</span>
+            <a 
+              href="https://api.whatsapp.com/send?text=*Marcus%20Aurelius%20Thought*%0A%0A%22You%20have%20power%20over%20your%20mind%20%E2%80%94%20not%20outside%20events.%20Realize%20this,%20and%20you%20will%20find%20strength.%22%0A%0Aपठाण%20सरांचा%20विचार-कोष:%20https://inspire-archive.pages.dev" 
+              target="_blank" 
+              rel="noopener" 
+              class="share-whatsapp-link"
+            >
+              WhatsApp वर पाठवा →
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ITEM 2: YOUTUBE VIDEO REFLECTION -->
+      <article class="stream-entry" data-category="Video">
+        <div class="entry-card">
+          <div class="entry-meta-top">
+            <span class="type-badge type-video">व्हिडिओ / Video Reflection</span>
+            <span class="entry-date">08 NOV 2026</span>
+          </div>
+
+          <h2 class="entry-headline">The Pale Blue Dot: एका छोट्या ठिपक्यावरचे जीवन</h2>
+
+          <!-- Clean 16:9 Video Frame -->
+          <div class="video-wrapper">
+            <iframe 
+              src="https://www.youtube-nocookie.com/embed/wupToqz1e2g" 
+              title="The Pale Blue Dot - Carl Sagan" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <div class="reflection-prose">
+            <p>
+              १९९० मध्ये व्हॉयेजर-१ या अंतराळयानाने ६ अब्ज किलोमीटर अंतरावरून पृथ्वीचा एक फोटो काढला. त्यात आपली संपूर्ण पृथ्वी सूर्यकिरणांच्या एका कणात तरंगणाऱ्या <strong>'फिकट निळ्या ठिपक्या' (Pale Blue Dot)</strong> सारखी दिसली.
+            </p>
+            <p>
+              कार्ल सेगन (Carl Sagan) यांचे या व्हिडिओतील भाष्य आपल्याला नम्र व्हायला शिकवते. आपले अहंकार, क्षुल्लक भांडणे आणि अपयशाचे दु:ख या अथांग विश्वाच्या पसार्‍यात किती नगण्य आहेत! जेव्हा जेव्हा मन अस्वस्थ होईल, तेव्हा हा व्हिडिओ शांतपणे पाहा — मन शांत होईल आणि जीवनाचा खरा अर्थ उमजेल.
+            </p>
+          </div>
+
+          <div class="entry-footer-actions">
+            <span class="curator-tag">✍️ पठाण सर</span>
+            <a 
+              href="https://api.whatsapp.com/send?text=*The%20Pale%20Blue%20Dot%20by%20Carl%20Sagan*%0A%0Aविश्वाच्या%20पसाऱ्यात%20आपले%20स्थान%20काय?%20एकदा%20नक्की%20पाहा:%20https://inspire-archive.pages.dev" 
+              target="_blank" 
+              rel="noopener" 
+              class="share-whatsapp-link"
+            >
+              WhatsApp वर पाठवा →
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ITEM 3: PODCAST TAKEAWAY -->
+      <article class="stream-entry" data-category="Podcast">
+        <div class="entry-card">
+          <div class="entry-meta-top">
+            <span class="type-badge type-podcast">पॉडकास्ट / Podcast Insight</span>
+            <span class="entry-date">05 NOV 2026</span>
+          </div>
+
+          <h2 class="entry-headline">Dr. Andrew Huberman: एकाग्रतेचे न्यूरोसायन्स (Deep Focus)</h2>
+
+          <!-- Clean Podcast Card -->
+          <div class="podcast-card-box">
+            <div class="podcast-icon-bubble">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                <line x1="12" y1="19" x2="12" y2="23"></line>
+                <line x1="8" y1="23" x2="16" y2="23"></line>
+              </svg>
+            </div>
+            <div class="podcast-info-meta">
+              <span class="podcast-series-title">Huberman Lab Podcast • Ep. 88</span>
+              <div class="podcast-ep-name">Focus Toolkit: 90-Minute Ultradian Cycles</div>
+              <p class="podcast-takeaway">
+                "मानवी मेंदू सलग ५-६ तास एकाग्र राहू शकत नाही. निसर्गाने मेंदूची रचना ९० मिनिटांच्या चक्रात केली आहे. ९० मिनिटे पूर्ण लक्ष द्या, त्यानंतर १५ मिनिटे मोबाईलपासून पूर्ण लांब राहा."
+              </p>
+            </div>
+          </div>
+
+          <div class="reflection-prose">
+            <p>
+              अभ्यासात ८-१० तास केवळ खुर्चीवर बसून राहणे महत्त्वाचे नाही, तर किती वेळ तुमचा मेंदू <strong>'Deep Focus'</strong> मध्ये होता हे महत्त्वाचे आहे.
+            </p>
+            <p>
+              विद्यार्थ्यांनी दिवसातून केवळ २ किंवा ३ वेळा ९० मिनिटांचे डीप-वर्क सेशन्स केले, तरी सामान्य विद्यार्थ्यांच्या दुपटीने प्रगती होते. फोन दुसऱ्या खोलीत ठेवा आणि मेंदूच्या नैसर्गिक चक्राचा आदर करा.
+            </p>
+          </div>
+
+          <div class="entry-footer-actions">
+            <span class="curator-tag">✍️ पठाण सर</span>
+            <a 
+              href="https://api.whatsapp.com/send?text=*Dr.%20Andrew%20Huberman%20on%20Focus*%0A%0Aमेंदूची%20एकाग्रता%20कशी%20वाढवावी?%20वाचा%20थेट:%20https://inspire-archive.pages.dev" 
+              target="_blank" 
+              rel="noopener" 
+              class="share-whatsapp-link"
+            >
+              WhatsApp वर पाठवा →
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ITEM 4: VISUAL ESSAY -->
+      <article class="stream-entry" data-category="Visual">
+        <div class="entry-card">
+          <div class="entry-meta-top">
+            <span class="type-badge type-visual">दृष्टीक्षेप / Visual Essay</span>
+            <span class="entry-date">01 NOV 2026</span>
+          </div>
+
+          <h2 class="entry-headline">Kintsugi (金継ぎ): तुटलेल्या गोष्टी सोन्याने जोडण्याची कला</h2>
+
+          <div class="visual-image-wrapper">
+            <img 
+              src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80" 
+              alt="Kintsugi Ceramic Art" 
+              loading="lazy"
+            />
+            <div class="visual-caption">
+              Kintsugi: जपानमधील प्राचीन कला जिथे तुटलेली मातीची भांडी सोन्याच्या रंगाने जोडली जातात.
+            </div>
+          </div>
+
+          <div class="reflection-prose">
+            <p>
+              जपानी संस्कृतीत एक सुंदर समज आहे — जर एखादी मौल्यवान वस्तू फुटली, तर ती फेकून दिली जात नाही किंवा तिच्या भेगा लपवल्या जात नाहीत. उलट, त्या भेगा सोन्याच्या द्रवाने भरल्या जातात. परिणामी, ती वस्तू पूर्वीपेक्षाही अधिक सुंदर आणि अमूल्य बनते.
+            </p>
+            <p>
+              आपल्या आयुष्याचेही तसेच आहे. अपयश, चुका आणि संकटांमुळे आपल्या मनाला पडलेल्या भेगा हे आपले दोष नसून आपल्या प्रवासाचे सोनेरी अनुभव आहेत. तुमच्या संघर्षाची लाज बाळगू नका; तेच तुम्हाला घडवत आहेत.
+            </p>
+          </div>
+
+          <div class="entry-footer-actions">
+            <span class="curator-tag">✍️ पठाण सर</span>
+            <a 
+              href="https://api.whatsapp.com/send?text=*Kintsugi%20Philosophy*%0A%0Aतुटलेल्या%20गोष्टी%20सोन्याने%20जोडण्याची%20कला.%20पठाण%20सरांचे%20विचार:%20https://inspire-archive.pages.dev" 
+              target="_blank" 
+              rel="noopener" 
+              class="share-whatsapp-link"
+            >
+              WhatsApp वर पाठवा →
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- Clean, Dignified Footer (Zero Automated Box) -->
+  <footer class="curator-footer">
+    <div class="container">
+      <div class="footer-quote-signoff">
+        "चांगल्या विचारांची देवाणघेवाण हीच खरी प्रेरणा."
+      </div>
+      <div class="footer-curator-name">
+        Pathan Sir's Archive • इन्स्पायर कोचिंग क्लासेस, धर्माबाद
+      </div>
+      <div class="footer-location-line">
+        Second Floor, Above Aalekhya Hospital, Devi Road, Dharmabad, Maharashtra
+      </div>
+
+      <a 
+        href="https://wa.me/919011291176?text=नमस्कार%20पठाण%20सर,%20मी%20Pathan%20Sir's%20Archive%20वरून%20मेसेज%20करत%20आहे." 
+        target="_blank" 
+        rel="noopener" 
+        class="footer-whatsapp-touch"
+      >
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.174.086.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.086s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1 1.031z"/>
+        </svg>
+        पठाण सरांशी संपर्क (WhatsApp: +91 9011291176)
+      </a>
+
+      <div class="copyright-quiet">
+        © 2026 Pathan Sir's Archive • इन्स्पायर कोचिंग क्लासेस, धर्माबाद. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Fast Category Filtering Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const pills = document.querySelectorAll('.pill-btn');
+      const entries = document.querySelectorAll('.stream-entry');
+
+      pills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          const category = pill.getAttribute('data-category');
+
+          pills.forEach(p => p.classList.remove('active'));
+          pill.classList.add('active');
+
+          entries.forEach(entry => {
+            const entryCategory = entry.getAttribute('data-category');
+            if (category === 'All' || entryCategory === category) {
+              entry.classList.remove('is-hidden');
+            } else {
+              entry.classList.add('is-hidden');
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>
