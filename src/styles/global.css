@@ -510,10 +510,6 @@ body {
   height: 24px;
   flex-shrink: 0;
 }
-  border-color: #15803d;
-  color: #15803d;
-  background: #ffffff;
-}
 
 .copyright-quiet {
   margin-top: 2.5rem;
