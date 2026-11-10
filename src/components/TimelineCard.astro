@@ -6,7 +6,7 @@ interface Props {
   siteUrl?: string;
 }
 
-const { post, siteUrl = 'https://inspire-archive.pages.dev' } = Astro.props;
+const { post, siteUrl = 'https://pathan-sir-archive.pages.dev' } = Astro.props;
 const { Content } = await post.render();
 
 const formattedDate = new Intl.DateTimeFormat('en-GB', {
@@ -17,13 +17,11 @@ const formattedDate = new Intl.DateTimeFormat('en-GB', {
 
 const badgeClass = 
   post.data.category === 'Quote' ? 'type-quote' :
-  post.data.category === 'Video' ? 'type-video' :
-  post.data.category === 'Podcast' ? 'type-podcast' : 'type-visual';
+  post.data.category === 'Video' ? 'type-video' : 'type-podcast';
 
 const badgeLabel = 
   post.data.category === 'Quote' ? 'विचार / Quote' :
-  post.data.category === 'Video' ? 'व्हिडिओ / Video Reflection' :
-  post.data.category === 'Podcast' ? 'पॉडकास्ट / Podcast Insight' : 'दृष्टीक्षेप / Visual Essay';
+  post.data.category === 'Video' ? 'व्हिडिओ / Video Reflection' : 'पॉडकास्ट / Podcast Insight';
 
 const postPermalink = `/posts/${post.slug}/`;
 const fullPostUrl = `${siteUrl.replace(/\/$/, '')}${postPermalink}`;
@@ -31,7 +29,7 @@ const fullPostUrl = `${siteUrl.replace(/\/$/, '')}${postPermalink}`;
 const shareText = encodeURIComponent(
   `*${post.data.title}*\n\n` +
   `${post.data.description || ''}\n\n` +
-  `पठाण सरांचा विचार-कोष (Pathan Sir's Archive):\n` +
+  `विचार धारा by पठाण सर:\n` +
   `${fullPostUrl}`
 );
 const whatsappShareUrl = `https://api.whatsapp.com/send?text=${shareText}`;

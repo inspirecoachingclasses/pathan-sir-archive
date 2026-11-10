@@ -24,7 +24,7 @@ const formattedDate = new Intl.DateTimeFormat('en-GB', {
   year: 'numeric'
 }).format(post.data.date).toUpperCase();
 
-const siteUrl = Astro.site?.toString() || 'https://inspire-archive.pages.dev';
+const siteUrl = Astro.site?.toString() || 'https://pathan-sir-archive.pages.dev';
 const fullPostUrl = `${siteUrl.replace(/\/$/, '')}/posts/${post.slug}/`;
 
 const shareText = encodeURIComponent(

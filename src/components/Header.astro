@@ -4,16 +4,18 @@ interface Props {
   categories?: string[];
 }
 
-const { currentCategory = 'All', categories = ['All', 'Quote', 'Video', 'Podcast', 'Visual'] } = Astro.props;
+const { currentCategory = 'All', categories = ['All', 'Quote', 'Video', 'Podcast'] } = Astro.props;
 
 const categoryLabels: Record<string, string> = {
   All: 'सर्व (All)',
   Quote: 'सुविचार (Quotes)',
   Video: 'व्हिडिओ (Videos)',
   Podcast: 'पॉडकास्ट (Podcasts)',
-  Visual: 'दृष्टीक्षेप (Visuals)',
   Philosophy: 'तत्त्वज्ञान (Philosophy)'
 };
+
+// Filter out Visual if passed
+const filteredCategories = categories.filter(c => c !== 'Visual');
 ---
 
 <header class="site-masthead">
@@ -27,7 +29,7 @@ const categoryLabels: Record<string, string> = {
         </svg>
         इन्स्पायर कोचिंग क्लासेस, धर्माबाद
       </div>
-      <span class="institute-subline">Inspire Physics Classes • NEET | MHT-CET | Class 9-12</span>
+      <span class="institute-subline">Inspire Coaching Classes Dharmabad • Class 9th - 10th Science | Class 11th - 12th Physics | MHT-CET | NEET</span>
     </div>
 
     <!-- Main Title -->
@@ -35,10 +37,10 @@ const categoryLabels: Record<string, string> = {
       <a href="/" style="color: inherit; text-decoration: none;">Pathan Sir’s Archive</a>
     </h1>
     <div class="masthead-subtitle">
-      संकलन आणि विचार: <strong>पठाण सर (Pathan Sir)</strong>
+      विचार धारा by <strong>पठाण सर</strong>
     </div>
     <p class="masthead-tagline">
-      "जीवनाला दिशा देणारे जगातील मौल्यवान विचार, प्रेरणादायी कोट्स, विचार करायला लावणारे पॉडकास्ट आणि संस्मरणीय संवाद."
+      "जीवनाला दिशा देणारे जगातील प्रेरणादायी विचारांचा संग्रह."
     </p>
   </div>
 </header>
@@ -46,7 +48,7 @@ const categoryLabels: Record<string, string> = {
 <nav class="filter-sticky-strip">
   <div class="container">
     <div class="filter-pill-row" id="filterBar">
-      {categories.map((cat) => (
+      {filteredCategories.map((cat) => (
         <button 
           type="button" 
           class={`pill-btn ${cat === currentCategory ? 'active' : ''}`}

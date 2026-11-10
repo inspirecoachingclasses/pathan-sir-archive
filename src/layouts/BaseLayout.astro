@@ -15,23 +15,24 @@ interface Props {
 
 const {
   title = "Pathan Sir's Archive | इन्स्पायर कोचिंग क्लासेस, धर्माबाद",
-  description = "जगातील सर्वोत्तम विचार, प्रेरणादायी कोट्स, पॉडकास्ट आणि व्हिडीओ — संकलन: पठाण सर (इन्स्पायर, धर्माबाद).",
+  description = "जीवनाला दिशा देणारे जगातील प्रेरणादायी विचारांचा संग्रह — विचार धारा by पठाण सर.",
   image = "/og-banner.svg",
   isArticle = false,
   publishedTime,
   currentCategory = "All",
-  categories = ['All', 'Quote', 'Video', 'Podcast', 'Visual']
+  categories = ['All', 'Quote', 'Video', 'Podcast']
 } = Astro.props;
 
-const canonicalUrl = new URL(Astro.url.pathname, Astro.site || 'https://inspire-archive.pages.dev').href;
-const socialImageUrl = new URL(image, Astro.site || 'https://inspire-archive.pages.dev').href;
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site || 'https://pathan-sir-archive.pages.dev').href;
+const socialImageUrl = new URL(image, Astro.site || 'https://pathan-sir-archive.pages.dev').href;
 ---
 
 <!DOCTYPE html>
-<html lang="mr">
+<html lang="en" translate="no" class="notranslate">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="google" content="notranslate" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="canonical" href={canonicalUrl} />
 
@@ -75,9 +76,23 @@ const socialImageUrl = new URL(image, Astro.site || 'https://inspire-archive.pag
 
   <Footer />
 
-  <!-- Instant Filtering Script -->
+  <!-- Instant Filtering & Dynamic WhatsApp Share URL Enhancer -->
   <script>
-    function setupCategoryFiltering() {
+    function setupApp() {
+      // 1. Dynamic WhatsApp Share link updater (ensures custom link uses current live domain)
+      const shareLinks = document.querySelectorAll<HTMLAnchorElement>('.share-whatsapp-link');
+      const currentOrigin = window.location.origin;
+
+      shareLinks.forEach((link) => {
+        const rawHref = link.getAttribute('href');
+        if (rawHref && rawHref.includes('pages.dev')) {
+          // Replace hardcoded placeholder domain with active origin
+          const updatedHref = rawHref.replace(/https:\/\/[^/]+\.pages\.dev/, currentOrigin);
+          link.setAttribute('href', updatedHref);
+        }
+      });
+
+      // 2. Filter Pills
       const pills = document.querySelectorAll<HTMLButtonElement>('.pill-btn');
       const entries = document.querySelectorAll<HTMLElement>('.stream-entry');
 
@@ -100,7 +115,7 @@ const socialImageUrl = new URL(image, Astro.site || 'https://inspire-archive.pag
       });
     }
 
-    document.addEventListener('DOMContentLoaded', setupCategoryFiltering);
+    document.addEventListener('DOMContentLoaded', setupApp);
   </script>
 </body>
 </html>
